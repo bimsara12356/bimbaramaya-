@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bimbarama Temple - Elukatiya, Ahangama</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* Reset and base styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    html[data-theme="light"] body {
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    html[data-theme="dark"] body {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: var(--header-bg, #fff);
+      color: inherit;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    html[data-theme="dark"] header {
+      background: #1e1e1e;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #2a4d69;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #f76c6c; }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: url('https://www.thingstodosrilanka.com/wp-content/uploads/2020/08/ruwanweliseya-anuradhapura.jpg') center center/cover no-repeat;
+      padding: 40px 20px;
+      animation: fadeInUp 1.8s ease forwards;
+      gap: 20px;
+      color: black;
+      text-align: center;
+    }
+
+    .hero-text { padding: 20px; max-width: 800px; }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: black;
+      font-weight: 900; /* bold */
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    .hero-text p {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      color: black;
+      line-height: 1.5;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #fff;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    html[data-theme="dark"] .section {
+      background-color: #1e1e1e;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #2a4d69;
+    }
+
+    .section p, .section ul {
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: inherit;
+    }
+
+    .section ul {
+      text-align: left;
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    /* Daily Rituals background */
+    #rituals {
+      background: url('https://thumbs.dreamstime.com/z/buddhist-wall-painting-golden-temple-sri-lanka-11447965.jpg') center center/cover no-repeat;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-container img {
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-container img:hover { transform: scale(1.05); }
+
+    footer {
+      background-color: #2a4d69;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .hero { 
+        flex-direction: column; 
+        text-align: center; 
+      }
+      .hero-text h1 { font-size: 2.2rem; }
+      #rituals {
+        padding: 40px 15px;
+      }
+      .gallery-container img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Bimbarama Temple</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#history">History</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#community">Monastic Community</a>
+      <a href="#rituals">Rituals</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#events">Events</a>
+      <a href="#visitor">Visitor Info</a>
+      <a href="#contact">Contact</a>
+      <span class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </span>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Bimbarama Temple</h1>
+      <p>Elukatiya, Ahangama - A sacred sanctuary for spiritual peace, meditation, and Buddhist heritage. Whether you seek tranquility, spiritual guidance, or a deeper connection to Buddhist traditions, our temple warmly welcomes visitors and devotees alike to experience its serene beauty and rich history.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About the Temple</h2>
+    <p>Bimbarama Maha Viharaya, nestled in the lush surroundings of Elukatiya, Ahangama, is a historic Buddhist temple dating back several centuries. It stands as a beacon of peace and spiritual reflection for locals and travelers.</p>
+    <p>The temple grounds feature traditional architecture, ancient statues, and beautifully maintained meditation halls, inviting visitors to immerse themselves in a calm and reverent atmosphere.</p>
+    <p>Our community actively participates in preserving cultural heritage while promoting mindfulness, compassion, and wisdom.</p>
+  </section>
+
+  <section class="section" id="history">
+    <h2>History & Heritage</h2>
+    <p>The temple's origins trace back over 400 years, serving as a spiritual hub through colonial times to modern Sri Lanka. It has witnessed numerous restorations and remains an important site preserving traditional Buddhist culture.</p>
+    <p>Stories and legends about the temple's founding monks and benefactors are passed down, contributing to the sacred aura of the site.</p>
+  </section>
+
+  <section class="section" id="architecture">
+    <h2>Architecture Highlights</h2>
+    <p>The temple complex showcases classic Sri Lankan Buddhist architecture, featuring:</p>
+    <ul>
+      <li>Stupas with intricate stone carvings</li>
+      <li>Wooden pillars and ornate ceiling murals</li>
+      <li>A meditation hall designed for peaceful contemplation</li>
+      <li>Ancient Buddha statues with unique local artistic styles</li>
+    </ul>
+    <p>Visitors appreciate the harmony between nature and temple design, reflecting spiritual principles of balance and serenity.</p>
+  </section>
+
+  <section class="section" id="community">
+    <h2>Monastic Community</h2>
+    <p>Bimbarama Temple is home to a dedicated community of monks who engage in daily rituals, teaching, and community outreach. The monks follow Theravāda Buddhist traditions and welcome visitors to participate in learning sessions and meditation.</p>
+    <p>The temple also hosts retreats and special programs led by senior monks.</p>
+  </section>
+
+  <section class="section" id="rituals">
+    <h2>Daily Rituals</h2>
+    <p>At Bimbarama Temple, daily rituals are designed to foster spiritual growth and communal harmony. Visitors are encouraged to participate and observe the rhythms of temple life:</p>
+    <ul>
+      <li><strong>Morning Puja (5:30 AM - 7:00 AM):</strong> Begin the day with chanting, meditation, and offerings to the Buddha.</li>
+      <li><strong>Midday Blessings (12:00 PM):</strong> Monks perform blessings and teachings, open to all who seek guidance.</li>
+      <li><strong>Evening Offering (6:00 PM - 7:30 PM):</strong> Devotees offer alms and join in the chanting to conclude the day with gratitude.</li>
+      <li><strong>Dharma Discussions:</strong> Scheduled on weekends, these sessions deepen understanding of Buddhist teachings.</li>
+    </ul>
+    <p>All are welcome to join respectfully and experience the spiritual vibrancy of the temple community.</p>
+  </section>
+
+  <section class="section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-container">
+      <img src="images/temple_front.jpg" alt="Temple Front View" />
+      <img src="images/meditation_hall.jpg" alt="Meditation Hall" />
+      <img src="images/festival.jpg" alt="Annual Festival" />
+      <img src="images/temple_path.jpg" alt="Path to the Temple" />
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <h2>Upcoming Events & Festivals</h2>
+    <p>Join us for vibrant celebrations that highlight Buddhist traditions and community spirit, including:</p>
+    <ul>
+      <li><strong>Vesak Festival:</strong> Illuminating the temple with lanterns and commemorating the Buddha's birth, enlightenment, and passing.</li>
+      <li><strong>Poson Poya:</strong> Marking the introduction of Buddhism to Sri Lanka with religious observances and processions.</li>
+      <li><strong>Annual Kathina Ceremony:</strong> Offering robes and gifts to the monastic community, fostering generosity and merit.</li>
+    </ul>
+    <p>Special events are announced on our social media and notice boards.</p>
+  </section>
+
+  <section class="section" id="visitor">
+    <h2>Visitor Information</h2>
+    <p>We warmly welcome visitors of all backgrounds. Here are some helpful tips for your visit:</p>
+    <ul>
+      <li>Dress modestly: shoulders and knees covered.</li>
+      <li>Remove footwear before entering temple buildings.</li>
+      <li>Photography is allowed outside the main shrines; please ask before taking photos of monks or ceremonies.</li>
+      <li>Respect silence during meditation and rituals.</li>
+      <li>Guided tours are available by prior arrangement.</li>
+    </ul>
+    <p>Contact us to arrange group visits or participate in volunteer programs.</p>
+  </section>
+
+  <section class="section" id="donate">
+    <h2>Support & Donations</h2>
+    <p>Your generosity helps preserve Bimbarama Temple and support the monastic community. Donations fund maintenance, cultural events, and community services.</p>
+    <p>You can contribute by:</p>
+    <ul>
+      <li>Monetary donations via bank transfer or in-person</li>
+      <li>Volunteering your time and skills</li>
+      <li>Offering supplies for temple upkeep and rituals</li>
+    </ul>
+    <p>Thank you for helping us keep this sacred heritage alive.</p>
+  </section>
+
+  <section class="section" id="map">
+    <h2>Find Us</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@bimbaramatemple.lk | Phone: +94 71 234 5678</p>
+    <p>Address: Bimbarama Maha Viharaya, Elukatiya, Ahangama, Sri Lanka</p>
+    <p>Follow us on social media: 
+      <a href="#" aria-label="Facebook" style="color:#2a4d69;"><i class="fab fa-facebook"></i></a> 
+      <a href="#" aria-label="Instagram" style="color:#2a4d69;"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter" style="color:#2a4d69;"><i class="fab fa-twitter"></i></a>
+    </p>
+  </section>
+
+  <footer>&copy; 2025 Bimbarama Temple, Elukatiya, Ahangama. All rights reserved.</footer>
+
+  <script>
+    // Theme toggle script
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      document.getElementById("theme-icon").className = newTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+    }
+
+    // On load, apply stored theme
+    window.onload = () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      document.getElementById("theme-icon").className = savedTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
+    };
+  </script>
+</body>
+</html>
